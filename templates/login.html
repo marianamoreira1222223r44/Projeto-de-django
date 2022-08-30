@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head %}
+    <title>Login - TCC</title>
+{% endblock %}
+{% block conteudo %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-5 mx-auto">
+            <div align="center">
+                <h2>Login</h2>
+            </div>
+            <hr>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="btn btn-primary mt-3 btn-rosa" value="Entrar"/>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

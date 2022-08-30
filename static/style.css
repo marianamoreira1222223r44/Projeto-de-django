@@ -1,0 +1,63 @@
+footer {
+    clear: both;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-top: auto 0;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    /* overflow-y: hidden; */
+}
+
+.input-group, .select, .select:focus , .select:focus-visible, .form-control, .form-control:focus, .form-control:focus-visible {
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    border: 0;
+}
+
+nav{
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+.btn-rosa, .btn-rosa:focus-visible{
+    background-color: #f669c3 !important;
+    border:0;
+}
+
+.btn-rosa:focus{
+    background-color: #c4549c !important;
+    border:0;
+    box-shadow: none;
+   
+
+}
+
+a:not([class="foto"]), a:not([class="foto"]):hover{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    margin-top: 1rem;
+}
+
+#id_username, #id_password2 {
+    margin-bottom: 1rem;
+}
+.card{
+    border: 0;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+
+.col-btn-card{
+    display: flex;
+    justify-content: space-evenly;
+   
+}
+
+.p-tcc-detalhe{
+    margin-bottom: 0;
+}

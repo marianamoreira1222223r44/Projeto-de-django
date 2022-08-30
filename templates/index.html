@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    {% if request.user.is_authenticated %}
+    <button class="btn btn-primary btn-rosa" ><a class="bi bi-file-earmark-plus" href="{% url 'criar_tcc' %}"> Adicionar</a> </button>
+    
+ {% endif %}
+ <div class="row mt-4">
+    {% for tcc in object_list %}
+            
+        <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-sm-1 col-xs-1">
+            <a href="{% url 'detalhar_tcc' tcc.id %}">
+                <div class="card mt-4" style="width: 18rem">
+                <div class="card-body">
+                    <h4 class="card-title">{{tcc.titulo }}</h4>
+                    <p class="card-text"><i class="fa-solid fa-user"></i> {{tcc.autor.primeiro_nome }}</p>
+                    <p class="card-text">#{{tcc.palavras_chave}}</p>
+                    {% if request.user.is_authenticated %}
+                        <div class="col col-btn-card mt-3">
+                        <button class="btn btn-success"><a class="bi bi-pencil-square" href="{% url 'editar_tcc' tcc.id %}"> Editar</a></button>
+                        <button class="btn btn-danger"><a class="bi bi-trash2" href="{% url 'deletar_tcc' tcc.id %}"> Excluir </a></button>
+                        </div>
+                    {% endif %}
+                </div>
+                </div>
+            </a>
+        </div>
+       
+    {% empty %}
+        <h5>Nenhum tcc registrado</h5>
+
+    {% endfor %}
+</div>
+    
+    
+
+
+</div>
+
+{% endblock %}

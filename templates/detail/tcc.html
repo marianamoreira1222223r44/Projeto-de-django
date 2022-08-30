@@ -1,0 +1,41 @@
+{% extends 'base.html' %} {% block conteudo %}
+<div class="container mt-5">
+
+  <div class="row mt-4">
+   
+
+            <div class="col">
+                <div class="card mt-4 mb-3" >
+                    <div class="card-body">
+                    <h4 class="card-title">{{tcc.titulo}}</h4>
+                    <div class="row">
+                        <div class="col">
+                            <p class="card-text">{{tcc.autor.primeiro_nome }} {{tcc.autor.ultimo_nome}}</p>
+                            
+                        </div>
+                        <div class="col-2">
+                            <p class="card-text">{{tcc.ano_do_documento }}</p>
+                        </div>
+                    </div>
+                    <p class="card-text p-tcc-detalhe">Orientador: {{tcc.orientador }}</p>
+                    <p class="card-text p-tcc-detalhe">Curso: {{tcc.curso }}</p>
+                    <p class="card-text p-tcc-detalhe">Palavras_chave: {{tcc.palavras_chave }}</p>
+                    <a class="card-text p-tcc-detalhe" href="{{tcc.arquivo_do_documento.url }}">Link do arquivo</a>
+                       
+                    </div>
+                </div>
+                <div class="card mt-4" >
+                    <div class="card-body">
+                    <h3 class="card-title">Resumo:</h3>
+                    <p class="card-text">{{tcc.resumo }}</p>
+                    </div>
+                </div>
+            </div>
+        
+    
+
+
+  </div>
+</div>
+
+{% endblock %}

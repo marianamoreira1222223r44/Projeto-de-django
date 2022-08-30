@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+<div class="container mt-5">
+    {% if request.user.is_authenticated %}
+        <button class="btn btn-primary btn-rosa" ><a class="bi bi-file-earmark-plus" href="{% url 'criar_curso' %}"> Adicionar</a> </button>
+        
+    {% endif %}
+    <div class="row mt-4">
+    {% for curso in object_list %}
+    
+        
+      
+            
+                <div class="col-md-4 col-lg-4 col-xl-4 col-xxl-4 col-sm-1 col-xs-1">
+                    <div class="card mt-4" style="width: 18rem">
+                        <div class="card-body">
+                            <h4 class="card-title">{{curso.nome }}</h4>
+                            <p class="card-text">{{curso.modalidade }}</p>
+                            {% if request.user.is_authenticated %}   
+                            <div class="col col-btn-card mt-3">
+                            <button class="btn btn-success"><a class="bi bi-pencil-square" href="{% url 'editar_curso' curso.id %}"> Editar</a></button>
+                            <button class="btn btn-danger"><a class="bi bi-trash2" href="{% url 'deletar_curso' curso.id %}"> Excluir </a></button>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+  
+           
+               
+       
+        {% empty %}
+        <h5>Nenhum curso registrado</h5>
+
+
+    {% endfor %}
+</div>
+    
+    
+
+
+</div>
+
+{% endblock %}
